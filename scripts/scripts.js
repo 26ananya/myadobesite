@@ -11,6 +11,7 @@ import {
   loadSection,
   loadSections,
   loadCSS,
+  fetchPlaceholders
 } from './aem.js';
 
 /**
@@ -121,9 +122,14 @@ function loadDelayed() {
 }
 
 async function loadPage() {
+  // const placeholders = await fetchPlaceholders('en'); 
+  // console.log(placeholders);
   await loadEager(document);
+
   await loadLazy(document);
   loadDelayed();
+ 
 }
+
 
 loadPage();
